@@ -1,5 +1,6 @@
 package com.example.demo.base;
 
+import java.lang.reflect.Field;
 import java.util.*;
 
 /**
@@ -10,9 +11,11 @@ import java.util.*;
 public class BaseTest {
 
     public static void main(String[]  args){
-        System.out.print(reverseString("hello")+"\n");
-        System.out.print(reverse("hello my name is travis")+"\n");
-        iteratorHashMap();
+//        System.out.print(reverseString("hello")+"\n");
+//        System.out.print(reverse("hello my name is travis")+"\n");
+//        iteratorHashMap();
+//        iteratorList();
+        iteratorArrayList();
 
     }
 
@@ -69,6 +72,66 @@ public class BaseTest {
         for(String v:map.values())
         {
             System.out.println("The value is "+v);
+        }
+    }
+
+    public static void iteratorList(){
+        String[] name = {
+                "张三","李四","王二"
+        };
+        List<String> nameList = Arrays.asList(name);
+        System.out.print("\n容量："+nameList.size());
+
+        Iterator<String> nameIter = nameList.iterator();
+        while(nameIter.hasNext()){
+            System.out.print(nameIter.next());
+        }
+
+
+        System.out.print("\n容量："+nameList.size());
+    }
+
+    public static void iteratorArrayList(){
+        String[] name = {
+                "张三","李四","王二"
+        };
+        List<String> arrayList =new ArrayList<String>();
+        arrayList = Arrays.asList(name);
+        System.out.print("\n容量："+arrayList.size());
+
+        Iterator<String> nameIter = arrayList.iterator();
+        while(nameIter.hasNext()){
+            System.out.print("\n"+nameIter.next());
+        }
+        System.out.print("\n容量："+arrayList.size());
+
+        ArrayList<String> list = new ArrayList<>(10);
+
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.ensureCapacity(16);
+        System.out.print("\n容量："+ getArrayListCapacity(list));
+        list.trimToSize();
+        System.out.print("\n容量："+ getArrayListCapacity(list));
+        System.out.print("\n位置："+ list.indexOf("a"));
+        System.out.print("\n内容："+ list);
+    }
+
+    public static int getArrayListCapacity(ArrayList<?> arrayList) {
+        Class<ArrayList> arrayListClass = ArrayList.class;
+        try {
+            //获取 elementData 字段
+            Field field = arrayListClass.getDeclaredField("elementData");
+            //开始访问权限
+            field.setAccessible(true);
+            //把示例传入get，获取实例字段elementData的值
+            Object[] objects = (Object[])field.get(arrayList);
+            //返回当前ArrayList实例的容量值
+            return objects.length;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 }
