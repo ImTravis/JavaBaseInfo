@@ -1,10 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.event.HelloEvent;
+import com.alibaba.fastjson.JSONObject;
+import com.example.demo.baiduAI.BaiAIUtils;
+import com.example.demo.baiduAI.FileUtil;
 import com.example.demo.extend.HelloWorldImpl;
 import com.example.demo.extend.HelloWorldImplChild;
 import com.example.demo.extend.HelloWorldImplChildChild;
-import org.apache.catalina.core.ApplicationContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,22 @@ public class DemoApplicationTests {
 
 
     }
+
+    @Autowired
+    BaiAIUtils carRecognizeService;
+    @Test
+    public void baiduAI() {
+
+        try{
+            JSONObject result =carRecognizeService.recogCar( FileUtil.readFileByBytes("C:\\Users\\Administrator\\Desktop\\pic\\timg.jpg"));
+
+            System.out.print("******:"+result.toJSONString()+"\n");
+        }catch (Exception e){
+            e.getStackTrace();
+        }
+
+    }
+
+
 
 }

@@ -4,8 +4,8 @@ import java.io.*;
 
 /**
  * @author 作者 xcc:
- * @version 创建时间：
- * 类说明
+ * @version 创建时间：20190625
+ * 类说明:文件工具类
  */
 public class FileUtil {
     public static void CopyFile(File src, File dest) throws IOException {

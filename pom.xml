@@ -42,33 +42,33 @@
         </dependency>
 
         <dependency>
-            <groupId>com.baidu.ai</groupId>
-            <artifactId>ocr</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>D:/资料/ocr_sdk-1.3.9.jar</systemPath>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.baidu.ai</groupId>-->
-            <!--<artifactId>api-core</artifactId>-->
-            <!--<version>1.0</version>-->
-            <!--<scope>system</scope>-->
-            <!--<systemPath>D:/资料/aip-core-1.3.8.jar</systemPath>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.baidu.ai</groupId>-->
-            <!--<artifactId>ocr-sdk</artifactId>-->
-            <!--<version>1.0</version>-->
-            <!--<scope>system</scope>-->
-            <!--<systemPath>D:/资料/ocr_sdk-1.3.9.jar</systemPath>-->
-        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.baidu.aip/java-sdk -->
-        <dependency>
-            <groupId>com.baidu.aip</groupId>
-            <artifactId>java-sdk</artifactId>
-            <version>4.11.3</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.baidu.aip</groupId>-->
+            <!--<artifactId>java-sdk</artifactId>-->
+            <!--<version>4.11.3</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
