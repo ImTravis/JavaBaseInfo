@@ -62,6 +62,14 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net  ftp-->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.3</version>
+        </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/com.baidu.aip/java-sdk -->
         <!--<dependency>-->

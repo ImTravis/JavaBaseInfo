@@ -27,7 +27,8 @@ public class MyInvocationHandler implements InvocationHandler {
     // 它自定义了一个 invoke 方法，用于集中处理在动态代理类对象上的方法调用，通常在该方法中实现对委托类的代理访问。
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("method :" + method.getName() + " is invoked!");
+
+        System.out.println("method :" + method.getName() + " is invoked!"+method.getDeclaringClass());
         return method.invoke(target, args); // 执行相应的目标方法
     }
 }

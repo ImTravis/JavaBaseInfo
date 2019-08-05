@@ -5,6 +5,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * JDK动态代理类 （有接口）
@@ -30,11 +32,17 @@ public class JDKProxyTest {
 
         // 下面是简单的一种写法，本质上和上面是一样的
         //该方法用于为[指定类装载器]、[一组接口]、[调用处理器]生成动态代理类实例
-        HelloWorldProxy helloWorld2=(HelloWorldProxy)Proxy.
-                 newProxyInstance(JDKProxyTest.class.getClassLoader(),
-                        new Class<?>[]{HelloWorldProxy.class},
-                        new MyInvocationHandler(new HelloworldProxyImpl()));
-        helloWorld2.sayHello();
+//        HelloWorldProxy helloWorld2=(HelloWorldProxy)Proxy.
+//                 newProxyInstance(JDKProxyTest.class.getClassLoader(),
+//                        new Class<?>[]{HelloWorldProxy.class},
+//                        new MyInvocationHandler(new HelUnicastRemoteObject loworldProxyImpl()));
+//        helloWorld2.sayHello();
+
+        List<String> a = new ArrayList<>();
+        a.add("a");
+        a.add("b");
+        a.set(1,"c");
+        System.out.print("***"+a.toString());
 
     }
 
